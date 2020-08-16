@@ -22,11 +22,9 @@ class Admin extends Component {
             privilege:props.privilege
         }
     }
-    addSelectHandler(AddedItem){
-        this.props.dispatch({
-            type:"AddSelect",
-            payload:AddedItem
-        })
+    addSelectHandler(totalCountries,countryToAdd){
+        debugger;
+        this.props.dispatch(addCountry(totalCountries,countryToAdd));
     }
     render() {
      

@@ -18,16 +18,14 @@ export const FetchCountries=()=> {
 
 
 export const addCountry=(countryList,country_name)=> {
+    debugger;
     return dispatch=>{
-    return axios.post("http://13.57.235.126:5000/addcountry",
-        {
-            name:country_name
-          }
-        ).then((Response)=>{
-            if(Response.status==200){
+    return axios.get("http://13.57.235.126:5000/addcountry?name="+country_name).then((Response)=>{
+          
+            if(Response.status=="Success"){
             countryList = countryList.push({name:country_name})
             dispatch({
-                type:"RestData",
+                type:"FetchCountries",
                 payload:country_name
             })
         }
