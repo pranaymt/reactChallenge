@@ -15,7 +15,7 @@ class Admin extends Component {
             type:"privilegeFlag",
             payload:true
         })
-        this.props.dispatch(FetchCountries());
+        
     }
     static getDerivedStateFromProps(props, state) {
         return{
@@ -29,7 +29,7 @@ class Admin extends Component {
         })
     }
     render() {
-        debugger;
+     
         return (
             <div>
                 <SmartDropDown Privilege={this.props.privilege} noOfItems="5" addAndSelectHandler = {this.addSelectHandler.bind(this)}/>
